@@ -1,168 +1,111 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Ficha de Personagem - Ordem Paranormal RPG</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-		}
+<h2>Ficha do Personagem</h2>
+<form>
+  <fieldset>
+    <legend>Informações Básicas</legend>
+    <label for="nome-personagem">Nome:</label>
+    <input type="text" id="nome-personagem" name="nome-personagem">
+    <br><br>
+    <label for="classe-personagem">Classe:</label>
+    <input type="text" id="classe-personagem" name="classe-personagem">
+    <br><br>
+    <label for="nivel-personagem">Nível:</label>
+    <input type="number" id="nivel-personagem" name="nivel-personagem" min="1" max="20" value="1">
+    <br><br>
+    <label for="atributo-forca">Força:</label>
+    <input type="number" id="atributo-forca" name="atributo-forca" min="1" max="20" value="1" onchange="atualizarModificador('mod-forca', this.value)">
+    <label for="mod-forca">Modificador:</label>
+    <input type="text" id="mod-forca" name="mod-forca" disabled>
+    <br><br>
+    <label for="atributo-destreza">Destreza:</label>
+    <input type="number" id="atributo-destreza" name="atributo-destreza" min="1" max="20" value="1" onchange="atualizarModificador('mod-destreza', this.value)">
+    <label for="mod-destreza">Modificador:</label>
+    <input type="text" id="mod-destreza" name="mod-destreza" disabled>
+    <br><br>
+    <label for="atributo-constituicao">Constituição:</label>
+    <input type="number" id="atributo-constituicao" name="atributo-constituicao" min="1" max="20" value="1" onchange="atualizarModificador('mod-constituicao', this.value)">
+    <label for="mod-constituicao">Modificador:</label>
+    <input type="text" id="mod-constituicao" name="mod-constituicao" disabled>
+    <br><br>
+    <label for="atributo-inteligencia">Inteligência:</label>
+    <input type="number" id="atributo-inteligencia" name="atributo-inteligencia" min="1" max="20" value="1" onchange="atualizarModificador('mod-inteligencia', this.value)">
+    <label for="mod-inteligencia">Modificador:</label>
+    <input type="text" id="mod-inteligencia" name="mod-inteligencia" disabled>
+    <br><br>
+    <label for="atributo-sabedoria">Sabedoria:</label>
+    <input type="number" id="atributo-sabedoria" name="atributo-sabedoria" min="1" max="20" value="1" onchange="atualizarModificador('mod-sabedoria', this.value)">
+    <label for="mod-sabedoria">Modificador:</label>
+    <input type="text" id="
 
-		h1 {
-			font-size: 28px;
-			margin-bottom: 10px;
-		}
-
-		h2 {
-			font-size: 22px;
-			margin-bottom: 10px;
-		}
-
-		h3 {
-			font-size: 18px;
-			margin-bottom: 10px;
-		}
-
-		.section {
-			margin-top: 20px;
-			margin-bottom: 20px;
-			border-bottom: 2px solid #ccc;
-			padding-bottom: 10px;
-		}
-
-		.label {
-			font-weight: bold;
-			margin-right: 10px;
-			display: inline-block;
-			width: 120px;
-		}
-
-		.input {
-			display: inline-block;
-			width: 200px;
-			margin-bottom: 10px;
-		}
-
-		.textarea {
-			display: block;
-			width: 100%;
-			height: 80px;
-			margin-bottom: 10px;
-		}
-
-		.button {
-			display: inline-block;
-			background-color: #4CAF50;
-			color: white;
-			padding: 10px 20px;
-			border: none;
-			cursor: pointer;
-			font-size: 16px;
-			border-radius: 5px;
-			margin-top: 10px;
-			margin-bottom: 10px;
-		}
-
-		.button:hover {
-			background-color: #3e8e41;
-		}
-
-		.camera {
-			display: inline-block;
-			width: 250px;
-			margin-right: 10px;
-			margin-bottom: 10px;
-			vertical-align: top;
-			position: relative;
-		}
-
-		.camera img {
-			max-width: 100%;
-			height: auto;
-			display: block;
-			margin-bottom: 5px;
-		}
-
-		.camera p {
-			margin: 0;
-			font-size: 14px;
-		}
-
-		.camera input {
-			width: 100%;
-			display: block;
-			margin-bottom: 5px;
-		}
-
-		.camera .button {
-			margin-top: 5px;
-			margin-bottom: 0;
-		}
-
-		.dice {
-			display: inline-block;
-			width: 100px;
-			height: 100px;
-			background-color: white;
-			border: 1px solid black;
-			text-align: center;
-			vertical-align: middle;
-			font-size: 28px;
-			font-weight: bold;
-			cursor: pointer;
-			position: relative;
-			margin-right: 10px;
-		}
-
-		.dice:hover {
-			background-color: #f7f7f7;
-		}
-
-		.dice:before {
-			content: '';
-			display: block;
-			position: absolute;
-			top: -10px;
-			left: -10px;
-			width: 20px;
-			height: 20px;
-			border-top: 1px solid black;
-			border-left: 1
-
-        
-        
-
-        
-        
-        
-        
-        <h2>Armas de Fogo</h2>
-<div>
-  <label for="pistola">Pistola</label>
-  <input type="number" id="pistola" name="pistola" min="0" value="12">
-  <label for="pistola">Balas</label>
-</div>
-<div>
-  <label for="rifle">Rifle</label>
-  <input type="number" id="rifle" name="rifle" min="0" value="30">
-  <label for="rifle">Balas</label>
+			   
+			   
+			   
+			   <div class="section">
+  <h2>Itens</h2>
+  <ul>
+    <li><input type="text" placeholder="Item 1"></li>
+    <li><input type="text" placeholder="Item 2"></li>
+    <li><input type="text" placeholder="Item 3"></li>
+    <li><input type="text" placeholder="Item 4"></li>
+    <li><input type="text" placeholder="Item 5"></li>
+  </ul>
 </div>
 
-        
-        
-        
-        
-        
-        <h2>Câmeras</h2>
-<div>
-  <label for="camera1">Jogador 1</label>
-  <input type="text" id="camera1" name="camera1" placeholder="Insira o link da câmera">
+<div class="section">
+  <h2>Perícias</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Valor</th>
+        <th>Modificar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="text" placeholder="Nome da Perícia"></td>
+        <td><input type="text" placeholder="Valor"></td>
+        <td><button>+/-</button></td>
+      </tr>
+      <tr>
+        <td><input type="text" placeholder="Nome da Perícia"></td>
+        <td><input type="text" placeholder="Valor"></td>
+        <td><button>+/-</button></td>
+      </tr>
+      <tr>
+        <td><input type="text" placeholder="Nome da Perícia"></td>
+        <td><input type="text" placeholder="Valor"></td>
+        <td><button>+/-</button></td>
+      </tr>
+      <tr>
+        <td><input type="text" placeholder="Nome da Perícia"></td>
+        <td><input type="text" placeholder="Valor"></td>
+        <td><button>+/-</button></td>
+      </tr>
+      <tr>
+        <td><input type="text" placeholder="Nome da Perícia"></td>
+        <td><input type="text" placeholder="Valor"></td>
+        <td><button>+/-</button></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<div>
-  <label for="camera2">Jogador 2</label>
-  <input type="text" id="camera2" name="camera2" placeholder="Insira o link da câmera">
+
+						  
+						  <div class="section">
+  <h2>Rolagem de Dados</h2>
+  <div class="dice">
+    <select>
+      <option value="1">1d20</option>
+      <option value="2">2d20</option>
+      <option value="3">3d20</option>
+      <option value="4">4d20</option>
+      <option value="5">5d20</option>
+    </select>
+    <button id="roll-btn">Rolar</button>
+    <div id="result"></div>
+  </div>
 </div>
-<div>
-  <label for="camera3">Jogador 3</label>
-  <input type="text" id="camera3" name="camera3" placeholder="Insira o link
+
+		    
+		    document.getElementById("roll-btn").addEventListener("click", function() {
+  const numDice = document.querySelector(".dice select").
