@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Ficha de Personagem</title>
+    <style>
+      /* Estilos para deixar a ficha mais bonita */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #ccc;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      h1, h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      input[type="text"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ficha de Personagem</h1>
+      <form>
+        <h2>Status</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Valor</th>
+              <th>Modificador</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PV máximo</td>
+              <td><input type="number" id="pv-max" name="pv-max" value="50"></td>
+              <td><input type="text" id="pv-mod" name="pv-mod" value="+3"></td>
+            </tr>
+            <tr>
+              <td>Sanidade</td>
+              <td><input type="number" id="san-max" name="san-max" value="60"></td>
+              <td><input type="text" id="san-mod" name="san-mod" value="+5"></td>
+            </tr>
+            <tr>
+              <td>Poder</td>
+              <td><input type="number" id="po-max" name="po-max" value="40"></td>
+              <td><input type="text" id="po-mod" name="po-mod" value="+2"></td>
+            </tr>
+          </tbody>
+        </table>
+        <h2>Atributos</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Quantidade de Dados</th>
+              <th>Maior Valor</th>
+              <th>Mod
