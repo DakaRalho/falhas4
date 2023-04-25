@@ -1,111 +1,105 @@
-<h2>Ficha do Personagem</h2>
-<form>
-  <fieldset>
-    <legend>Informações Básicas</legend>
-    <label for="nome-personagem">Nome:</label>
-    <input type="text" id="nome-personagem" name="nome-personagem">
-    <br><br>
-    <label for="classe-personagem">Classe:</label>
-    <input type="text" id="classe-personagem" name="classe-personagem">
-    <br><br>
-    <label for="nivel-personagem">Nível:</label>
-    <input type="number" id="nivel-personagem" name="nivel-personagem" min="1" max="20" value="1">
-    <br><br>
-    <label for="atributo-forca">Força:</label>
-    <input type="number" id="atributo-forca" name="atributo-forca" min="1" max="20" value="1" onchange="atualizarModificador('mod-forca', this.value)">
-    <label for="mod-forca">Modificador:</label>
-    <input type="text" id="mod-forca" name="mod-forca" disabled>
-    <br><br>
-    <label for="atributo-destreza">Destreza:</label>
-    <input type="number" id="atributo-destreza" name="atributo-destreza" min="1" max="20" value="1" onchange="atualizarModificador('mod-destreza', this.value)">
-    <label for="mod-destreza">Modificador:</label>
-    <input type="text" id="mod-destreza" name="mod-destreza" disabled>
-    <br><br>
-    <label for="atributo-constituicao">Constituição:</label>
-    <input type="number" id="atributo-constituicao" name="atributo-constituicao" min="1" max="20" value="1" onchange="atualizarModificador('mod-constituicao', this.value)">
-    <label for="mod-constituicao">Modificador:</label>
-    <input type="text" id="mod-constituicao" name="mod-constituicao" disabled>
-    <br><br>
-    <label for="atributo-inteligencia">Inteligência:</label>
-    <input type="number" id="atributo-inteligencia" name="atributo-inteligencia" min="1" max="20" value="1" onchange="atualizarModificador('mod-inteligencia', this.value)">
-    <label for="mod-inteligencia">Modificador:</label>
-    <input type="text" id="mod-inteligencia" name="mod-inteligencia" disabled>
-    <br><br>
-    <label for="atributo-sabedoria">Sabedoria:</label>
-    <input type="number" id="atributo-sabedoria" name="atributo-sabedoria" min="1" max="20" value="1" onchange="atualizarModificador('mod-sabedoria', this.value)">
-    <label for="mod-sabedoria">Modificador:</label>
-    <input type="text" id="
-
-			   
-			   
-			   
-			   <div class="section">
-  <h2>Itens</h2>
-  <ul>
-    <li><input type="text" placeholder="Item 1"></li>
-    <li><input type="text" placeholder="Item 2"></li>
-    <li><input type="text" placeholder="Item 3"></li>
-    <li><input type="text" placeholder="Item 4"></li>
-    <li><input type="text" placeholder="Item 5"></li>
-  </ul>
-</div>
-
-<div class="section">
-  <h2>Perícias</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Valor</th>
-        <th>Modificar</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><input type="text" placeholder="Nome da Perícia"></td>
-        <td><input type="text" placeholder="Valor"></td>
-        <td><button>+/-</button></td>
-      </tr>
-      <tr>
-        <td><input type="text" placeholder="Nome da Perícia"></td>
-        <td><input type="text" placeholder="Valor"></td>
-        <td><button>+/-</button></td>
-      </tr>
-      <tr>
-        <td><input type="text" placeholder="Nome da Perícia"></td>
-        <td><input type="text" placeholder="Valor"></td>
-        <td><button>+/-</button></td>
-      </tr>
-      <tr>
-        <td><input type="text" placeholder="Nome da Perícia"></td>
-        <td><input type="text" placeholder="Valor"></td>
-        <td><button>+/-</button></td>
-      </tr>
-      <tr>
-        <td><input type="text" placeholder="Nome da Perícia"></td>
-        <td><input type="text" placeholder="Valor"></td>
-        <td><button>+/-</button></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-						  
-						  <div class="section">
-  <h2>Rolagem de Dados</h2>
-  <div class="dice">
-    <select>
-      <option value="1">1d20</option>
-      <option value="2">2d20</option>
-      <option value="3">3d20</option>
-      <option value="4">4d20</option>
-      <option value="5">5d20</option>
-    </select>
-    <button id="roll-btn">Rolar</button>
-    <div id="result"></div>
-  </div>
-</div>
-
-		    
-		    document.getElementById("roll-btn").addEventListener("click", function() {
-  const numDice = document.querySelector(".dice select").
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ficha de Ordem Paranormal RPG</title>
+	<style type="text/css">
+		body {
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+		}
+		h1 {
+			text-align: center;
+			font-size: 24px;
+			margin-bottom: 0;
+		}
+		h2 {
+			font-size: 18px;
+			margin-top: 0;
+		}
+		section {
+			margin-top: 20px;
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-bottom: 20px;
+		}
+		table th {
+			background-color: #ddd;
+			padding: 5px;
+			text-align: left;
+		}
+		table td {
+			padding: 5px;
+			border: 1px solid #ddd;
+			vertical-align: middle;
+		}
+		table td input {
+			width: 100%;
+			box-sizing: border-box;
+			border: none;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+		}
+		table td select {
+			width: 100%;
+			box-sizing: border-box;
+			border: none;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+		}
+		table td input[type="checkbox"] {
+			margin-right: 5px;
+		}
+		table td label {
+			font-weight: normal;
+			font-size: 14px;
+		}
+		.roll-button {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 10px;
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			border-radius: 3px;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			cursor: pointer;
+		}
+	</style>
+	<script type="text/javascript">
+		function rollDice(numDice) {
+			var rolls = [];
+			var result = 0;
+			for (var i = 0; i < numDice; i++) {
+				var roll = Math.floor(Math.random() * 20) + 1;
+				rolls.push(roll);
+				result += roll;
+			}
+			var rollString = rolls.join(", ");
+			alert("Rolagem: " + rollString + "\nTotal: " + result);
+		}
+	</script>
+</head>
+<body>
+	<h1>Ficha de Personagem</h1>
+	<h2>Dados do Personagem</h2>
+	<section>
+		<table>
+			<tr>
+				<th>Nome</th>
+				<td><input type="text" name="charName" value="João Silva" /></td>
+			</tr>
+			<tr>
+				<th>Jogador</th>
+				<td><input type="text" name="playerName" value="Fulano de Tal" /></td>
+			</tr>
+			<tr>
+				<th>Descrição</th>
+				<td><textarea name="description">Personagem alto, cabelo preto, olhos azuis, etc.</textarea></td>
+			</tr>
+			<tr>
+				<th>Aparência</th>
+				<td><textarea name="appearance">Descrição detalhada do personagem, como ele se veste, etc.</
