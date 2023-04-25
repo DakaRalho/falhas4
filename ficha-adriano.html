@@ -134,6 +134,17 @@
 			<td>Força</td>
 			<p>Força: <span id="forca">0</span></p>
 <button onclick="rolarDados(4, 20, 'forca')">Rolar Dados</button>
+			<script>
+function rolarDados(quantidadeDados, maiorValor, elementoId) {
+  var resultado = 0;
+  for (var i = 0; i < quantidadeDados; i++) {
+    resultado += Math.floor(Math.random() * maiorValor) + 1;
+  }
+  document.getElementById(elementoId).innerHTML = resultado;
+}
+</script>
+
+			
 
 			<td>4</td>
 			<td></td>
