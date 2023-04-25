@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ficha de RPG - Página Inicial</title>
+	<title>Falhas RPG - Página Inicial</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
@@ -36,11 +36,71 @@
 	</style>
 </head>
 <body>
-	<h1>Ficha de RPG</h1>
+	<h1>Falhas RPG</h1>
 	<button onclick="location.href='painel-do-mestre.html'">Acessar Painel do Mestre</button>
 	<button onclick="location.href='ficha-adriano.html'">Acessar Ficha de Adriano</button>
 	<button onclick="location.href='ficha-marco.html'">Acessar Ficha de Marco</button>
 	<button onclick="location.href='ficha-dandara.html'">Acessar Ficha de Dandara</button>
 	<button onclick="location.href='ficha-kiara.html'">Acessar Ficha de Kiara</button>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ficha de RPG</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		/* CSS para estilizar a página */
+	</style>
+</head>
+<body>
+	<!-- Conteúdo da página -->
+
+	<script>
+		function rollDice() {
+			const result = Math.floor(Math.random() * 20) + 1;
+			let message;
+
+			switch (result) {
+				case 1:
+				case 2:
+				case 3:
+				case 4:
+				case 5:
+					message = 'Desastre!';
+					break;
+				case 6:
+				case 7:
+				case 8:
+				case 9:
+				case 10:
+					message = 'Fracasso!';
+					break;
+				case 11:
+				case 12:
+				case 13:
+				case 14:
+				case 15:
+					message = 'Normal.';
+					break;
+				case 16:
+				case 17:
+				case 18:
+				case 19:
+					message = 'Sucesso!';
+					break;
+				case 20:
+					message = 'Crítico!';
+					break;
+			}
+
+			return { result, message };
+		}
+
+		/* Outras funções e código JavaScript */
+	</script>
 </body>
 </html>
