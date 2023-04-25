@@ -152,6 +152,16 @@ function rolarD20() {
   }
   let resultado = Math.max(...dados) - 1;
   return resultado;
+
+function rolarDado(qtdeDados) {
+  var valoresDados = [];
+  for (var i = 0; i < qtdeDados; i++) {
+    valoresDados.push(Math.floor(Math.random() * 20) + 1);
+  }
+  valoresDados.sort();
+  return valoresDados.slice(1).reduce((a, b) => a + b, 0);
+}
+
 }
 <p>Força: <input type="number" name="forca" value="4" min="1" max="5"></p>
 
