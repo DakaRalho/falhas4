@@ -1,98 +1,168 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Ficha de Personagem</title>
-    <style>
-      /* Estilos para deixar a ficha mais bonita */
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-      }
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-shadow: 0 0 5px #ccc;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-      }
-      th, td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-      }
-      th {
-        background-color: #f2f2f2;
-      }
-      h1, h2 {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      input[type="text"],
-      input[type="number"],
-      select {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-      }
-      input[type="submit"] {
-        background-color: #4CAF50;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      input[type="submit"]:hover {
-        background-color: #3e8e41;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Ficha de Personagem</h1>
-      <form>
-        <h2>Status</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Valor</th>
-              <th>Modificador</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>PV máximo</td>
-              <td><input type="number" id="pv-max" name="pv-max" value="50"></td>
-              <td><input type="text" id="pv-mod" name="pv-mod" value="+3"></td>
-            </tr>
-            <tr>
-              <td>Sanidade</td>
-              <td><input type="number" id="san-max" name="san-max" value="60"></td>
-              <td><input type="text" id="san-mod" name="san-mod" value="+5"></td>
-            </tr>
-            <tr>
-              <td>Poder</td>
-              <td><input type="number" id="po-max" name="po-max" value="40"></td>
-              <td><input type="text" id="po-mod" name="po-mod" value="+2"></td>
-            </tr>
-          </tbody>
-        </table>
-        <h2>Atributos</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Quantidade de Dados</th>
-              <th>Maior Valor</th>
-              <th>Mod
+<head>
+	<title>Ficha de Personagem - Ordem Paranormal RPG</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			font-size: 28px;
+			margin-bottom: 10px;
+		}
+
+		h2 {
+			font-size: 22px;
+			margin-bottom: 10px;
+		}
+
+		h3 {
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+
+		.section {
+			margin-top: 20px;
+			margin-bottom: 20px;
+			border-bottom: 2px solid #ccc;
+			padding-bottom: 10px;
+		}
+
+		.label {
+			font-weight: bold;
+			margin-right: 10px;
+			display: inline-block;
+			width: 120px;
+		}
+
+		.input {
+			display: inline-block;
+			width: 200px;
+			margin-bottom: 10px;
+		}
+
+		.textarea {
+			display: block;
+			width: 100%;
+			height: 80px;
+			margin-bottom: 10px;
+		}
+
+		.button {
+			display: inline-block;
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			cursor: pointer;
+			font-size: 16px;
+			border-radius: 5px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		.button:hover {
+			background-color: #3e8e41;
+		}
+
+		.camera {
+			display: inline-block;
+			width: 250px;
+			margin-right: 10px;
+			margin-bottom: 10px;
+			vertical-align: top;
+			position: relative;
+		}
+
+		.camera img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		.camera p {
+			margin: 0;
+			font-size: 14px;
+		}
+
+		.camera input {
+			width: 100%;
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		.camera .button {
+			margin-top: 5px;
+			margin-bottom: 0;
+		}
+
+		.dice {
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			background-color: white;
+			border: 1px solid black;
+			text-align: center;
+			vertical-align: middle;
+			font-size: 28px;
+			font-weight: bold;
+			cursor: pointer;
+			position: relative;
+			margin-right: 10px;
+		}
+
+		.dice:hover {
+			background-color: #f7f7f7;
+		}
+
+		.dice:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: -10px;
+			left: -10px;
+			width: 20px;
+			height: 20px;
+			border-top: 1px solid black;
+			border-left: 1
+
+        
+        
+
+        
+        
+        
+        
+        <h2>Armas de Fogo</h2>
+<div>
+  <label for="pistola">Pistola</label>
+  <input type="number" id="pistola" name="pistola" min="0" value="12">
+  <label for="pistola">Balas</label>
+</div>
+<div>
+  <label for="rifle">Rifle</label>
+  <input type="number" id="rifle" name="rifle" min="0" value="30">
+  <label for="rifle">Balas</label>
+</div>
+
+        
+        
+        
+        
+        
+        <h2>Câmeras</h2>
+<div>
+  <label for="camera1">Jogador 1</label>
+  <input type="text" id="camera1" name="camera1" placeholder="Insira o link da câmera">
+</div>
+<div>
+  <label for="camera2">Jogador 2</label>
+  <input type="text" id="camera2" name="camera2" placeholder="Insira o link da câmera">
+</div>
+<div>
+  <label for="camera3">Jogador 3</label>
+  <input type="text" id="camera3" name="camera3" placeholder="Insira o link
