@@ -126,23 +126,36 @@
 	<h2>Atributos</h2>
 	
 			<p>Força: <span id="forca">0</span></p>
-<button onclick="rolarDados(4, 20, 'forca')">Rolar Dados</button>
-			<script>
-function rolarDados(quantidadeDados, maiorValor, elementoId) {
-  var resultado = 20;
-  for (var i = 4; i < quantidadeDados; i++) {
-    resultado += Math.floor(Math.random() * maiorValor) + 1;
+function rolarD20() {
+  let resultado = Math.floor(Math.random() * 20) + 1;
+  let mensagem = "";
+  if (resultado >= 20) {
+    mensagem = "Crítico";
+  } else if (resultado >= 16) {
+    mensagem = "Sucesso";
+  } else if (resultado >= 11) {
+    mensagem = "Normal";
+  } else if (resultado >= 6) {
+    mensagem = "Fracasso";
+  } else {
+    mensagem = "Desastre";
   }
-  document.getElementById(elementoId).innerHTML = resultado;
+  return { resultado: resultado - 1, mensagem: mensagem };
 }
-</script>
 
-			
+	function rolarAtributo(quantidade) {
+  let dados = [];
+  for (let i = 0; i < quantidade; i++) {
+    dados.push(Math.floor(Math.random() * 20) + 1);
+  }
+  let resultado = Math.max(...dados) - 1;
+  return resultado;
+}
+<p>Força: <input type="number" name="forca" value="4" min="1" max="5"></p>
 
-			<td>4</td>
-			<td></td>
-		</tr>
-		<tr>
+	<button onclick="salvarFicha()">Salvar</button>
+
+	
 			<td>Agilidade: 2</p>
 <p>Raciocínio: 0 (rola dois e pega o menor)</p>
 <p>Presença: 1</p>
