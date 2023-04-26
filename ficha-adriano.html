@@ -1,105 +1,88 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Ficha de Ordem Paranormal RPG</title>
-	<style type="text/css">
-		body {
-			font-family: Arial, sans-serif;
-			font-size: 14px;
-		}
-		h1 {
-			text-align: center;
-			font-size: 24px;
-			margin-bottom: 0;
-		}
-		h2 {
-			font-size: 18px;
-			margin-top: 0;
-		}
-		section {
-			margin-top: 20px;
-		}
-		table {
-			width: 100%;
-			border-collapse: collapse;
-			margin-bottom: 20px;
-		}
-		table th {
-			background-color: #ddd;
-			padding: 5px;
-			text-align: left;
-		}
-		table td {
-			padding: 5px;
-			border: 1px solid #ddd;
-			vertical-align: middle;
-		}
-		table td input {
-			width: 100%;
-			box-sizing: border-box;
-			border: none;
-			font-family: Arial, sans-serif;
-			font-size: 14px;
-		}
-		table td select {
-			width: 100%;
-			box-sizing: border-box;
-			border: none;
-			font-family: Arial, sans-serif;
-			font-size: 14px;
-		}
-		table td input[type="checkbox"] {
-			margin-right: 5px;
-		}
-		table td label {
-			font-weight: normal;
-			font-size: 14px;
-		}
-		.roll-button {
-			display: block;
-			width: 100%;
-			padding: 10px;
-			margin-bottom: 10px;
-			background-color: #4CAF50;
-			color: #fff;
-			border: none;
-			border-radius: 3px;
-			font-family: Arial, sans-serif;
-			font-size: 16px;
-			cursor: pointer;
-		}
-	</style>
-	<script type="text/javascript">
-		function rollDice(numDice) {
-			var rolls = [];
-			var result = 0;
-			for (var i = 0; i < numDice; i++) {
-				var roll = Math.floor(Math.random() * 20) + 1;
-				rolls.push(roll);
-				result += roll;
-			}
-			var rollString = rolls.join(", ");
-			alert("Rolagem: " + rollString + "\nTotal: " + result);
-		}
-	</script>
-</head>
-<body>
-	<h1>Ficha de Personagem</h1>
-	<h2>Dados do Personagem</h2>
-	<section>
-		<table>
-			<tr>
-				<th>Nome</th>
-				<td><input type="text" name="charName" value="João Silva" /></td>
-			</tr>
-			<tr>
-				<th>Jogador</th>
-				<td><input type="text" name="playerName" value="Fulano de Tal" /></td>
-			</tr>
-			<tr>
-				<th>Descrição</th>
-				<td><textarea name="description">Personagem alto, cabelo preto, olhos azuis, etc.</textarea></td>
-			</tr>
-			<tr>
-				<th>Aparência</th>
-				<td><textarea name="appearance">Descrição detalhada do personagem, como ele se veste, etc.</
+  <head>
+    <title>Ficha do Jogador</title>
+    <style>
+      /* Estilo para a ficha do jogador */
+      .ficha {
+        border: 1px solid black;
+        padding: 10px;
+        width: 200px;
+        height: 300px;
+        text-align: center;
+      }
+
+      /* Estilo para o campo da imagem da câmera */
+      .camera {
+        border: 1px solid black;
+        width: 100px;
+        height: 100px;
+        margin: 10px auto;
+      }
+
+      /* Estilo para o campo do nome do personagem */
+      .nome {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      /* Estilo para os botões dos status */
+      .status-button {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      /* Estilo para os status */
+      .status {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        border: 1px solid black;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+      }
+
+      /* Estilo para o status de PV */
+      .pv {
+        background-color: red;
+      }
+
+      /* Estilo para o status de PO */
+      .po {
+        background-color: purple;
+      }
+
+      /* Estilo para o status de SAN */
+      .san {
+        background-color: blue;
+      }
+
+      /* Estilo para o status de PM */
+      .pm {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ficha">
+      <div class="camera"></div>
+      <div class="nome">Nome do Personagem</div>
+      <button id="trocar-nome">Trocar Nome/Status</button>
+      <div class="status pv">20/20</div>
+      <div class="status po">10/10</div>
+      <div class="status san">50/50</div>
+      <div class="status pm">15/15</div>
+      <button class="status-button pv"></button>
+      <button class="status-button po"></button>
+      <button class="status-button san"></button>
+      <button class="status-button pm"></button>
+    </div>
+  </body>
+</html>
