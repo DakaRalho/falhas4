@@ -49,24 +49,23 @@
         line-height: 40px;
       }
 
-      /* Estilo para o status de PV */
-      .pv {
+      /* Estilo para a barra de vida */
+      .vida {
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      /* Estilo para a barra de vida preenchida */
+      .vida-preenchida {
+        height: 100%;
         background-color: red;
-      }
-
-      /* Estilo para o status de PO */
-      .po {
-        background-color: purple;
-      }
-
-      /* Estilo para o status de SAN */
-      .san {
-        background-color: blue;
-      }
-
-      /* Estilo para o status de PM */
-      .pm {
-        background-color: white;
+        transition: width 0.2s ease-in-out;
       }
     </style>
   </head>
@@ -76,13 +75,36 @@
       <div class="nome">Nome do Personagem</div>
       <button id="trocar-nome">Trocar Nome/Status</button>
       <div class="status pv">20/20</div>
-      <div class="status po">10/10</div>
-      <div class="status san">50/50</div>
-      <div class="status pm">15/15</div>
+      <div class="vida">
+        <div class="vida-preenchida" style="width: 100%;"></div>
+      </div>
       <button class="status-button pv"></button>
-      <button class="status-button po"></button>
-      <button class="status-button san"></button>
-      <button class="status-button pm"></button>
     </div>
-  </body>
-</html>
+
+    <script>
+      // Seleciona o elemento da barra de vida preenchida
+      const vidaPreenchida = document.querySelector('.vida-preenchida');
+
+      // Adiciona um ouvinte de eventos para quando o botão do status PV for clicado
+      document.querySelector('.status-button.pv').addEventListener('click', () => {
+        // Pede ao usuário para digitar o novo valor de PV
+        const novoValor = prompt('Digite o novo valor de PV:');
+
+        // Verifica se o novo valor é um número válido
+        if (novoValor !== null && !isNaN(novoValor)) {
+          // Converte o valor para um número inteiro
+          const valorInteiro = parseInt(novoValor, 10);
+
+          // Limita o valor entre 0 e 20
+          const valorLimitado = Math.max(Math.min(valorInteiro, 20), 0);
+
+         // Atualiza a porcentagem da barra de vida preenchida
+      const novaPorcentagem = valorLimitado * 5;
+      vidaPreenchida.style.width = `${novaPorcentagem}%`;
+      
+      // Atualiza o valor do status PV na ficha do jogador
+      const statusPV = document.querySelector('.status.pv');
+      statusPV.innerText = `${valorLimitado}/20`;
+    }
+  });
+</script>
