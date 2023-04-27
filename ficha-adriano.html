@@ -10,17 +10,52 @@
     <input type="number" id="numDice" min="1" max="10" value="1">
     <br>
     <button onclick="rollDice()">Roll!</button>
-    <p id="result"></p>
+    <ul id="results"></ul>
     <script>
       function rollDice() {
         var numDice = document.getElementById("numDice").value;
+        var results = [];
         var total = 0;
         for (var i = 0; i < numDice; i++) {
           var roll = Math.floor(Math.random() * 20) + 1;
+          results.push(roll);
           total += roll;
         }
-        document.getElementById("result").innerHTML = "You rolled " + numDice + "d20: " + total;
+        var resultText = "You rolled " + numDice + "d20: ";
+        for (var j = 0; j < results.length; j++) {
+          resultText += results[j];
+          if (j < results.length - 1) {
+            resultText += ", ";
+          }
+        }
+        resultText += "<br>Total: " + total;
+        document.getElementById("results").innerHTML = resultText;
       }
+      
+      
+      
+      
+      
+      switch (result) {
+				case 1;2;3;4;5:
+					message = 'Desastre!';
+					break;
+				case 6;7;8;9;10:
+					message = 'Fracasso!';
+					break;
+				case 11;12;13;14;15:
+					message = 'Normal.';
+					break;
+				case 16;17;18;19:
+					message = 'Sucesso!';
+					break;
+				case 20:
+					message = 'Crítico!';
+					break;
+			}
+
+			return { result, message };
+		}
     </script>
   </body>
 </html>
