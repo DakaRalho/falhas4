@@ -14,7 +14,7 @@
     <script>
       function rollDice() {
         var numDice = document.getElementById("numDice").value;
-        var results = [];
+        var result = [];
         var total = 0;
         for (var i = 0; i < numDice; i++) {
           var roll = Math.floor(Math.random() * 20) + 1;
@@ -36,7 +36,7 @@
       
       
       
-      switch (result) {
+      switch (results) {
 				case 1;2;3;4;5:
 					message = 'Desastre!';
 					break;
